@@ -2,7 +2,7 @@ name: Deploy Django App with Docker on Apache
 
 on:
   push:
-    branches: [visai]  # Trigger only on this branch
+    branches: [django_visai]  # Trigger only on this branch
 
 jobs:
   deploy:
