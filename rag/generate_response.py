@@ -4,7 +4,7 @@ from . import retriever
 
 # Load API key from environment
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
- 
+print("hello")
 # Initialize Groq client
 client = groq.Client(api_key=GROQ_API_KEY)
  
