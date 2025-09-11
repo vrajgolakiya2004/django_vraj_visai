@@ -1,0 +1,182 @@
+/* Custom Dialog Overlays */
+.rename-dialog-overlay,
+.delete-dialog-overlay,
+.new-session-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    backdrop-filter: blur(0px); /* Add blur for a modern look */
+}
+
+.rename-dialog-overlay.active,
+.delete-dialog-overlay.active,
+.new-session-dialog-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Base Dialog Styles */
+.rename-dialog,
+.delete-dialog,
+.new-session-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8); /* Start smaller for animation */
+    background: #222529;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth animation */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    border: 1px solid #2d333b;
+    color: #e2e8f0; /* Default text color */
+}
+
+.rename-dialog.open,
+.delete-dialog.open,
+.new-session-dialog.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Dialog Header */
+.rename-dialog h3,
+.delete-dialog h3,
+.new-session-dialog h3 {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Specific Icons for Dialogs */
+.rename-dialog h3::before {
+    content: "✏️";
+    font-size: 16px;
+}
+
+.delete-dialog h3::before {
+    content: "🗑️";
+    font-size: 16px;
+}
+
+.new-session-dialog h3::before {
+    content: "➕";
+    font-size: 16px;
+}
+
+/* Dialog Message (for delete/new session) */
+.delete-dialog p,
+.new-session-dialog p {
+    color: #e2e8f0;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Input Field (for rename dialog) */
+.rename-dialog input {
+    width: 100%;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid #3b4048;
+    border-radius: 6px;
+    color: #f3f4f6;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+}
+
+.rename-dialog input:focus {
+    border-color: #6366f1;
+    background: rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 0 1px #6366f1;
+}
+
+/* Dialog Buttons */
+.rename-dialog .dialog-buttons,
+.delete-dialog .dialog-buttons,
+.new-session-dialog .dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.rename-dialog button,
+.delete-dialog button,
+.new-session-dialog button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+}
+
+.confirm-btn {
+    background: #6366f1;
+    color: #ffffff;
+}
+
+.confirm-btn:hover {
+    background: #7f9cf5;
+    transform: translateY(-1px);
+}
+
+.cancel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+}
+
+.cancel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+    .rename-dialog,
+    .delete-dialog,
+    .new-session-dialog {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    .rename-dialog h3,
+    .delete-dialog h3,
+    .new-session-dialog h3 {
+        font-size: 16px;
+    }
+
+    .rename-dialog input,
+    .delete-dialog p,
+    .new-session-dialog p {
+        font-size: 13px;
+    }
+
+    .rename-dialog button,
+    .delete-dialog button,
+    .new-session-dialog button {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+}

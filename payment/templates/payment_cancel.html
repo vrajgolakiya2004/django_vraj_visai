@@ -1,0 +1,21 @@
+{% block content %}
+{% include 'header.html' %}
+{% include 'sidebar.html' %}
+
+<div class="techwave_fn_content">
+    <div class="techwave_fn_page">
+        <div class="container">
+            <div class="techwave_fn_title_holder">
+                <h1 class="title">Payment Cancelled</h1>
+                <p class="desc">You have not been charged. Your current plan remains active.</p>
+            </div>
+            
+            <div class="techwave_fn_button_group">
+                <a href="{% url 'payment:pricingPage' %}" class="techwave_fn_button"><span>Back to Pricing</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'footer.html' %}
+{% endblock %}

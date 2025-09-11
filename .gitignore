@@ -1,0 +1,30 @@
+# Ignore all migration files except __init__.py
+**/migrations/*
+!**/migrations/__init__.py
+ 
+# Ignore __pycache__ folders
+**/__pycache__/*
+ 
+# Ignore media folder
+# media/
+ 
+# Ignore folders
+__pycache__/
+*.sqlite3
+
+ 
+# Ignore FAISS DB folder
+faiss_db/
+ 
+ 
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+.env
+ 
+ 
+# Others
+*.log
+*.pot
+*.pyc
+.DS_Store".env" 

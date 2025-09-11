@@ -1,0 +1,85 @@
+name: Deploy Django App with Docker on Apache
+
+on:
+  push:
+    branches: [visai]  # Trigger only on this branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v3
+
+    - name: Set up SSH Agent
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.VPS_SSH_KEY }}
+
+    - name: Copy files to VPS
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} "mkdir -p ~/visai-django-new"
+        scp -r . ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }}:~/visai-django-new
+
+    - name: Build & Run Docker container on VPS
+      run: |
+        ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << EOF
+          export DB_USER="${{ secrets.DB_USER }}"
+          export DB_PASSWORD="${{ secrets.DB_PASSWORD }}"
+          export DB_HOST="${{ secrets.DB_HOST }}"
+          export DB_PORT="${{ secrets.DB_PORT }}"
+          export DB_NAME="${{ secrets.DB_NAME }}"
+          export DATABASE_URL="${{ secrets.DATABASE_URL }}"
+
+          export STRIPE_PUBLIC_KEY="${{ secrets.STRIPE_PUBLIC_KEY }}"
+          export STRIPE_SECRET_KEY="${{ secrets.STRIPE_SECRET_KEY }}"
+          export STRIPE_WEBHOOK_SECRECT="${{ secrets.STRIPE_WEBHOOK_SECRECT }}"
+
+          export GROQ_API_KEY="${{ secrets.GROQ_API_KEY }}"
+
+          export DJANGO_SUPERUSER_USERNAME="${{ secrets.DJANGO_SUPERUSER_USERNAME }}"
+          export DJANGO_SUPERUSER_EMAIL="${{ secrets.DJANGO_SUPERUSER_EMAIL }}"
+          export DJANGO_SUPERUSER_PASSWORD="${{ secrets.DJANGO_SUPERUSER_PASSWORD }}"
+
+
+          cd ~/visai-django-new
+          docker stop visai-django-new || true
+          docker rm visai-django-new || true
+
+          docker build -t visai-django-new .
+
+          docker run -d -p 8002:8002 --name visai-django-new \
+            -v /root/visai-django-new/staticfiles:/app/staticfiles \
+            -e DB_USER="$DB_USER" \
+            -e DB_PASSWORD="$DB_PASSWORD" \
+            -e DB_HOST="$DB_HOST" \
+            -e DB_PORT="$DB_PORT" \
+            -e DB_NAME="$DB_NAME" \
+            -e DATABASE_URL="$DATABASE_URL" \
+            -e STRIPE_PUBLIC_KEY="$STRIPE_PUBLIC_KEY" \
+            -e STRIPE_SECRET_KEY="$STRIPE_SECRET_KEY" \
+            -e STRIPE_WEBHOOK_SECRECT="$STRIPE_WEBHOOK_SECRECT" \
+            -e GROQ_API_KEY="$GROQ_API_KEY" \
+            -e DJANGO_SUPERUSER_USERNAME="$DJANGO_SUPERUSER_USERNAME" \
+            -e DJANGO_SUPERUSER_EMAIL="$DJANGO_SUPERUSER_EMAIL" \
+            -e DJANGO_SUPERUSER_PASSWORD="$DJANGO_SUPERUSER_PASSWORD" \
+            visai-django-new
+        EOF
+      env:
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_NAME: ${{ secrets.DB_NAME }}
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+        STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
+        STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+        STRIPE_WEBHOOK_SECRECT: ${{ secrets.STRIPE_WEBHOOK_SECRECT }}
+
+        DJANGO_SUPERUSER_USERNAME: ${{ secrets.DJANGO_SUPERUSER_USERNAME }}
+        DJANGO_SUPERUSER_EMAIL: ${{ secrets.DJANGO_SUPERUSER_EMAIL }}
+        DJANGO_SUPERUSER_PASSWORD: ${{ secrets.DJANGO_SUPERUSER_PASSWORD }}
+
+        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}

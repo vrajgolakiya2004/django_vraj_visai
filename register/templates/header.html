@@ -1,0 +1,334 @@
+{% load static %}
+<div class="profile">
+    {% if request.session.user_email %}
+        <span>Hello, {{ request.session.user_email }}!</span>
+    {% else %}
+        <span>Hello, Guest!</span>
+    {% endif %}
+</div>
+<head>
+
+   
+
+    <script>	
+        if (!localStorage.frenify_skin) {
+            localStorage.frenify_skin = 'dark';
+        }
+        if (!localStorage.frenify_panel) {
+            localStorage.frenify_panel = '';
+        }
+        document.documentElement.setAttribute("data-techwave-skin", localStorage.frenify_skin);
+        if(localStorage.frenify_panel !== ''){
+            document.documentElement.classList.add(localStorage.frenify_panel);
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&amp;family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- !Google Fonts -->
+
+    <!-- Styles -->
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/style8a54.css' %}" />
+    <link type="text/css" rel="stylesheet" href="{% static 'assets/css/plugins8a54.css' %}" />
+    <!-- !Styles -->
+
+	<script type="text/javascript" src="{% static 'assets/js/jquery8a54.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/plugins8a54.js' %}"></script>
+<script type="text/javascript" src="{% static 'assets/js/init8a54.js' %}"></script>
+</body>
+
+</head>
+<!-- Moving Submenu -->
+<div class="techwave_fn_fixedsub">
+	<ul></ul>
+</div>
+<!-- !Moving Submenu -->
+
+<!-- Preloader -
+<div class="techwave_fn_preloader enabled">
+	<svg>
+		<circle class="first_circle" cx="50%" cy="50%" r="110"></circle>
+		<circle class="second_circle" cx="50%" cy="50%" r="110"></circle>
+	</svg>
+</div>
+!Preloader -->
+
+
+<!-- MAIN WRAPPER -->
+<div class="techwave_fn_wrapper">
+	<div class="techwave_fn_wrap">
+	
+	
+		<!-- Searchbar -->
+		<div class="techwave_fn_searchbar">
+			<div class="search__bar">
+				<input class="search__input" type="text" placeholder="Search here...">
+				{% load static %}
+<img src="{%static 'assets/svg/search.svg' %}" alt="" class="fn__svg search__icon">
+
+				<a class="search__closer" href="#"><img src="{%static 'assets/svg/close.svg'%}" alt="" class="fn__svg"></a>
+			</div>
+			<div class="search__results">
+				<!-- Results will come here (via ajax after the integration you made after purchase as it doesn't work in HTML) -->
+				<div class="results__title">Results</div>
+				<div class="results__list">
+					<ul>
+						<li><a href="#">Artificial Intelligence</a></li>
+						<li><a href="#">Learn about the impact of AI on the financial industry</a></li>
+						<li><a href="#">Delve into the realm of AI-driven manufacturing</a></li>
+						<li><a href="#">Understand the ethical implications surrounding AI</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- !Searchbar -->
+		
+		<!-- HEADER -->
+		<header class="techwave_fn_header">
+		
+			<!-- Header left: token information -->
+			<div class="header__left">
+				<div class="fn__token_info">
+					<span class="token_summary">
+						<span class="count">120</span>
+						<span class="text">Tokens<br>Remain</span>
+					</span>
+					<a href="{% url 'payment:pricingPage' %}" class="token_upgrade techwave_fn_button"><span>Upgrade</span></a>
+					<div class="token__popup">
+						Resets in <span>19 hours.</span><br>
+						Daily limit is <span>200 tokens</span>
+					</div>
+				</div>
+			</div>
+			<!-- /Header left: token information -->
+			
+			
+			<!-- Header right: navigation bar -->
+			<div class="header__right">
+				<div class="fn__nav_bar">
+					
+					<!-- Search (bar item) -->
+					<div class="bar__item bar__item_search">
+						<a href="#" class="item_opener fn__tooltip" title="Search">
+							<img src="{%static 'assets/svg/search.svg'%}" alt="" class="fn__svg">
+						</a>
+						<div class="item_popup" data-position="right">
+							<input type="text" placeholder="Search">
+						</div>
+					</div>
+					<!-- !Search (bar item) -->
+					
+					<!-- Notification (bar item) -->
+					<div class="bar__item bar__item_notification has_notification">
+						<a href="#" class="item_opener fn__tooltip" title="Notifications">
+							<img src="{%static 'assets/svg/bell.svg'%}" alt="" class="fn__svg">
+						</a>
+						<div class="item_popup" data-position="right">
+							<div class="ntfc_header">
+								<h2 class="ntfc_title">Notifications</h2>
+								<a href="{% url 'notificationPage' %}">View All</a>
+							</div>
+							<div class="ntfc_list">
+								<ul>
+									<li>
+										<p><a href="{% url 'notificationPage' %}">Version 4.1.2 has been launched</a></p>
+										<span>34 Min Ago</span>
+									</li>
+									<li>
+										<p><a href="{% url 'notificationPage' %}">Video Generation has been released</a></p>
+										<span>12 Apr</span>
+									</li>
+									<li>
+										<p><a href="{% url 'notificationPage' %}">Terms has been updated</a></p>
+										<span>12 Apr</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- !Notification (bar item) -->
+					
+					<!-- Full Screen (bar item) -->
+					<div class="bar__item bar__item_fullscreen">
+						<a href="#" class="item_opener fn__tooltip" title="Full Screen">
+							<img src="{%static 'assets/svg/fullscreen.svg'%}" alt="" class="fn__svg f_screen">
+							<img src="{%static 'assets/svg/smallscreen.svg'%}" alt="" class="fn__svg s_screen">
+						</a>
+					</div>
+					<!-- !Full Screen (bar item) -->
+					
+					<!-- Language (bar item) -->
+					<div class="bar__item bar__item_language">
+						<a href="#" class="item_opener fn__tooltip" title="Language">
+							<img src="{%static 'assets/svg/language.svg'%}" alt="" class="fn__svg">
+						</a>
+						<div class="item_popup" data-position="right">
+							<ul>
+								<li>
+									<span class="active">English</span>
+								</li>
+								<li>
+									<a href="#">Spanish</a>
+								</li>
+								<li>
+									<a href="#">French</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- !Language (bar item) -->
+					
+					<!-- Site Skin (bar item) -->
+					<div class="bar__item bar__item_skin">
+						<a href="#" class="item_opener fn__tooltip" title="Dark/Light">
+							<img src="{%static 'assets/svg/sun.svg'%}" alt="" class="fn__svg light_mode">
+							<img src="{%static 'assets/svg/moon.svg'%}" alt="" class="fn__svg dark_mode">
+						</a>
+					</div>
+					<!-- !Site Skin (bar item) -->
+					 <!-- User (bar item) -->
+					 <div class="bar__item bar__item_user">
+						<a href="{% url 'userProfilePage' %}" class="user_opener fn__tooltip" title="User Profile">
+							<img src="{{ request.session.user_image }}" alt="">
+						</a>
+						<div class="item_popup" data-position="right">
+							<!-- Debug Section -->
+
+							<!-- End Debug Section -->
+							<div class="user_profile">
+								<div class="user_img">
+									<img src="{{ request.session.user_image }}" alt="">
+								</div>
+								<div class="user_info">
+									{% if request.session.user_name %}
+										<h2 class="user_name">Hello {{ request.session.user_name }}, Welcome To VisAI!</h2>
+									{% else %}
+										<h2 class="user_name">Hello Guest, Welcome To VisAI!</h2>
+									{% endif %}
+								</div>
+							</div>
+							<div class="debug">
+								<p>Name: {{ request.session.user_name }}</p>
+								<p>Email: {{ request.session.user_email }}</p>
+							</div>
+							<div class="user_nav">
+								<ul>
+									<li><a href="{% url 'userProfilePage' %}"><span class="icon"><img src="{% static 'assets/svg/person.svg' %}" alt="" class="fn__svg"></span><span class="text">Profile</span></a></li>
+									<li><a href="{% url 'userBillingPage' %}"><span class="icon"><img src="{% static 'assets/svg/billing.svg' %}" alt="" class="fn__svg"></span><span class="text">Billing</span></a></li>
+								   
+									<li><a href="{% url 'userSettingsPage' %}"><span class="icon"><img src="{% static 'assets/svg/setting.svg' %}" alt="" class="fn__svg"></span><span class="text">Settings</span></a></li>
+									<li><a href="{% url 'logoutPage' %}"><span class="icon"><img src="{% static 'assets/svg/logout.svg' %}" alt="" class="fn__svg"></span><span class="text">Log Out</span></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- !User (bar item) -->					
+					
+				</div>
+			</div>
+			<!-- !Header right: navigation bar -->
+			
+		</header>
+		<!-- !HEADER -->
+	</div>
+</div>
+
+<!-- Include JavaScript files -->
+<script src="{%static 'assets/js/jquery.min.js' %}"></script>
+<script src="{%static 'assets/js/plugins.js' %}"></script>
+<script src="{%static 'assets/js/main.js' %}"></script>
+<script>
+    $(document).ready(function() {
+        console.log("Document is ready");
+
+        // Toggle search bar
+        $('.bar__item_search .item_opener').on('click', function(e) {
+            e.preventDefault();
+            console.log("Search bar toggled");
+            $('.techwave_fn_searchbar').toggleClass('active');
+        });
+
+        // Toggle notifications
+        $('.bar__item_notification .item_opener').on('click', function(e) {
+            e.preventDefault();
+            console.log("Notifications toggled");
+            $(this).next('.item_popup').toggleClass('active');
+        });
+
+        // Toggle full screen
+        $('.bar__item_fullscreen .item_opener').on('click', function(e) {
+            e.preventDefault();
+            console.log("Full screen toggled");
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        });
+
+        // Toggle language menu
+        $('.bar__item_language .item_opener').on('click', function(e) {
+            e.preventDefault();
+            console.log("Language menu toggled");
+            $(this).next('.item_popup').toggleClass('active');
+        });
+
+        // Toggle site skin
+        $('.bar__item_skin .item_opener').on('click', function(e) {
+            e.preventDefault();
+            console.log("Site skin toggled");
+            var currentSkin = localStorage.getItem('frenify_skin');
+            var newSkin = currentSkin === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('frenify_skin', newSkin);
+            document.documentElement.setAttribute("data-techwave-skin", newSkin);
+        });
+
+        // Toggle user profile
+        $('.bar__item_user .user_opener').on('click', function(e) {
+            e.preventDefault();
+            console.log("User profile toggled");
+            $(this).next('.item_popup').toggleClass('active');
+        });
+
+        // Close search bar on clicking outside
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('.techwave_fn_searchbar, .bar__item_search').length) {
+                console.log("Search bar closed");
+                $('.techwave_fn_searchbar').removeClass('active');
+            }
+        });
+
+        // Close popups on clicking outside
+        $(document).on('click', function(e) {
+            if (!$(e.target).closest('.bar__item_notification, .bar__item_language, .bar__item_user').length) {
+                console.log("Popups closed");
+                $('.item_popup').removeClass('active');
+            }
+        });
+
+        // Toggle dark/light mode
+        $('.bar__item_skin .item_opener').on('click', function(e) {
+            e.preventDefault();
+            console.log("Dark/Light mode toggled");
+            var currentSkin = localStorage.getItem('frenify_skin');
+            var newSkin = currentSkin === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('frenify_skin', newSkin);
+            document.documentElement.setAttribute("data-techwave-skin", newSkin);
+        });
+    });
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const savedSkin = localStorage.getItem('frenify_skin') || 'light';
+        document.documentElement.setAttribute("data-techwave-skin", savedSkin);
+    });
+</script>
+
+<!-- !Include JavaScript files --></body>
+</html>
