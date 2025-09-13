@@ -98,6 +98,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles/")
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+BASE_URL = "http://vraj-intern.ybaisolution.com/"
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 media_root = os.path.join(BASE_DIR, 'reg_data')

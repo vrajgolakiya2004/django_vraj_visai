@@ -69,7 +69,7 @@ jobs:
       env:
         DB_USER: "postgres"
         DB_PASSWORD: "patelyash1234"
-        DB_HOST: 6"9.62.78.167"
+        DB_HOST: "69.62.78.167"
         DB_PORT: "5432"
         DB_NAME: "visai_db"
         DATABASE_URL: "postgresql://postgres:patelyash1234@69.62.78.167:5432/visai_db"
