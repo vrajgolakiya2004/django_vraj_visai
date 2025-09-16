@@ -67,13 +67,14 @@ WSGI_APPLICATION = 'visual_generator_tool.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME'),
-        'USER': os.getenv('DB_USER'),
-        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'NAME': os.getenv('DB_NAME', 'visai_db'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'patelyash1234'),
         'HOST': os.getenv('DB_HOST', '69.62.78.167'),
         'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
+
 
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.Argon2PasswordHasher',
