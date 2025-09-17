@@ -1,9 +1,9 @@
 #!/bin/sh
 set -e  # exit if any command fails
 
-echo "Waiting for PostgreSQL at $DB_HOST:$DB_PORT..."
+echo "Waiting for PostgreSQL at 69.62.78.167:5432..."
 
-until pg_isready -h "$DB_HOST" -p "$DB_PORT" -U "$DB_USER" do
+until pg_isready -h "69.62.78.167" -p "5432" -U "postgres"; do
   sleep 2
 done
 
