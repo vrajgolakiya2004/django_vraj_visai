@@ -69,7 +69,7 @@ jobs:
             visai-django-new
         EOF
       env:
-        DB_USER: "$DB_USER"
+        DB_USER: "postgres"
         DB_PASSWORD: "patelyash1234"
         DB_HOST: "69.62.78.167"
         DB_PORT: "5432"
