@@ -52,7 +52,7 @@ jobs:
 
           docker run -d -p 8002:8002 --name visai-django-new \
             -v /root/visai-django-new/staticfiles:/app/staticfiles \
-            -e DB_USER="$DB_USER" \
+            -e DB_USER="postgres" \
             -e DB_PASSWORD="patelyash1234" \
             -e DB_HOST="69.62.78.167" \
             -e DB_PORT="5432" \
