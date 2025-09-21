@@ -26,7 +26,7 @@ jobs:
       run: |
         ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << EOF
           export DB_USER="$DB_USER"
-          export DB_PASSWORD="patelyash1234"
+          export DB_PASSWORD="${{ secrets.DB_PASSWORD }}"
           export DB_HOST="69.62.78.167"
           export DB_PORT="5432"
           export DB_NAME="visai_db"
