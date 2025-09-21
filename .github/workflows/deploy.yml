@@ -52,12 +52,12 @@ jobs:
 
           docker run -d -p 8002:8002 --name visai-django-new \
             -v /root/visai-django-new/staticfiles:/app/staticfiles \
-            -e DB_USER="postgres" \
-            -e DB_PASSWORD="patelyash1234" \
-            -e DB_HOST="69.62.78.167" \
-            -e DB_PORT="5432" \
-            -e DB_NAME="visai_db" \
-            -e DATABASE_URL="postgresql://postgres:patelyash1234@69.62.78.167:5432/visai_db" \
+            -e DB_USER="$DB_USER" \
+            -e DB_PASSWORD="$DB_PASSWORD" \
+            -e DB_HOST="$DB_HOST" \
+            -e DB_PORT="$DB_PORT" \
+            -e DB_NAME="$DB_NAME" \
+            -e DATABASE_URL="$DATABASE_URL" \
             -e STRIPE_PUBLIC_KEY="$STRIPE_PUBLIC_KEY" \
             -e STRIPE_SECRET_KEY="$STRIPE_SECRET_KEY" \
             -e STRIPE_WEBHOOK_SECRECT="$STRIPE_WEBHOOK_SECRECT" \
@@ -69,12 +69,12 @@ jobs:
             visai-django-new
         EOF
       env:
-        DB_USER: "postgres"
-        DB_PASSWORD: "patelyash1234"
-        DB_HOST: "69.62.78.167"
-        DB_PORT: "5432"
-        DB_NAME: "visai_db"
-        DATABASE_URL: "postgresql://postgres:patelyash1234@69.62.78.167:5432/visai_db"
+        DB_USER: ${{ secrets.DB_USER }}
+        DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_NAME: ${{ secrets.DB_NAME }}
+        DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
         STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
         STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
