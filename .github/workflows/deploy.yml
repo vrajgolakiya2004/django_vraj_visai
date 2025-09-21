@@ -27,9 +27,9 @@ jobs:
         ssh -o StrictHostKeyChecking=no ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} << EOF
           export DB_USER="$DB_USER"
           export DB_PASSWORD="${{ secrets.DB_PASSWORD }}"
-          export DB_HOST="69.62.78.167"
-          export DB_PORT="5432"
-          export DB_NAME="visai_db"
+          export DB_HOST="${{ secrets.DB_HOST }}"
+          export DB_PORT="${{ secrets.DB_PORT }}"
+          export DB_NAME="${{ secrets.DB_NAME }}"
           export DATABASE_URL="postgresql://postgres:patelyash1234@69.62.78.167:5432/visai_db"
 
           export STRIPE_PUBLIC_KEY="${{ secrets.STRIPE_PUBLIC_KEY }}"
