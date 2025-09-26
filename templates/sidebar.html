@@ -2,17 +2,17 @@
 <!-- LEFT PANEL -->
 <div class="techwave_fn_leftpanel">
     <div class="mobile_extra_closer"></div>
-    
+
     <!-- logo (left panel) -->
     <div class="leftpanel_logo">
         <a href="{% url 'homePage' %}" class="fn_logo">
             <span class="full_logo">
                 <img src="{% static 'assets/img/logo.png' %}" alt="" class="desktop_logo">
-                <img src="{% static 'assets/img/logo-retina-full.png' %}" alt="" class="retina_logo">
+                <img src="{% static 'assets/img/logo.png' %}" alt="" class="retina_logo">
             </span>
             <span class="short_logo">
-                <img src="{% static 'assets/img/logo-retina-full.png' %}" alt="" class="desktop_logo" style="width: 50%; margin-left: 22%;">
-                <img src="{% static 'assets/img/logo-retina-mini.png' %}" alt="" class="retina_logo">
+                <img src="{% static 'assets/img/logo-retina-full.png' %}" alt="" class="desktop_logo">
+                <img src="{% static 'assets/img/logo-retina-full.png' %}" alt="" class="retina_logo">
             </span>
         </a>
         <a href="#" class="fn__closer fn__icon_button desktop_closer">
@@ -23,7 +23,7 @@
         </a>
     </div>
     <!-- !logo (left panel) -->
-    
+
     <!-- content (left panel) -->
     <div class="leftpanel_content">
         <!-- #1 navigation group -->
@@ -31,7 +31,8 @@
             <h2 class="group__title">Start Here</h2>
             <ul class="group__list">
                 <li>
-                    <a href="{% url 'homePage' %}" class="fn__tooltip active menu__item" data-position="right" title="Home">
+                    <a href="{% url 'homePage' %}" class="fn__tooltip active menu__item" data-position="right"
+                        title="Home">
                         <span class="icon"><img src="{% static 'assets/svg/home.svg' %}" alt="" class="fn__svg"></span>
                         <span class="text">Home</span>
                     </a>
@@ -40,19 +41,21 @@
             </ul>
         </div>
         <!-- !#1 navigation group -->
-    
+
         <!-- #2 navigation group -->
         <div class="nav_group">
             <h2 class="group__title">User Tools</h2>
             <ul class="group__list">
                 <li>
-                    <a href="{% url 'imageGenerationPage' %}" class="fn__tooltip menu__item" data-position="right" title="Image Generation">
+                    <a href="{% url 'imageGenerationPage' %}" class="fn__tooltip menu__item" data-position="right"
+                        title="Image Generation">
                         <span class="icon"><img src="{% static 'assets/svg/image.svg' %}" alt="" class="fn__svg"></span>
                         <span class="text">Image Generation</span>
                     </a>
                 </li>
                 <li>
-                    <a href="{% url 'aiChatBotPage' %}" class="fn__tooltip menu__item" data-position="right" title="AI Chat Bot">
+                    <a href="{% url 'aiChatBotPage' %}" class="fn__tooltip menu__item" data-position="right"
+                        title="AI Chat Bot">
                         <span class="icon"><img src="{% static 'assets/svg/chat.svg' %}" alt="" class="fn__svg"></span>
                         <span class="text">AI Chat Bot</span>
                     </a>
@@ -60,22 +63,26 @@
             </ul>
         </div>
         <!-- !#2 navigation group -->
-    
+
         <!-- #3 navigation group -->
         <div class="nav_group">
             <h2 class="group__title">Support</h2>
             <ul class="group__list">
                 <li>
-                    <a href="{% url 'payment:pricingPage' %}" class="fn__tooltip menu__item" data-position="right" title="Pricing">
-                        <span class="icon"><img src="{% static 'assets/svg/dollar.svg' %}" alt="" class="fn__svg"></span>
+                    <a href="{% url 'payment:pricingPage' %}" class="fn__tooltip menu__item" data-position="right"
+                        title="Pricing">
+                        <span class="icon"><img src="{% static 'assets/svg/dollar.svg' %}" alt=""
+                                class="fn__svg"></span>
                         <span class="text">Pricing</span>
                     </a>
                 </li>
                 <li class="templates/menu-item-has-children">
                     <a href="#" class="fn__tooltip menu__item" title="FAQ & Help" data-position="right">
-                        <span class="icon"><img src="{% static 'assets/svg/question.svg' %}" alt="" class="fn__svg"></span>
+                        <span class="icon"><img src="{% static 'assets/svg/question.svg' %}" alt=""
+                                class="fn__svg"></span>
                         <span class="text">FAQ & Help</span>
-                        <span class="trigger"><img src="{% static 'assets/svg/arrow.svg' %}" alt="" class="fn__svg"></span>
+                        <span class="trigger"><img src="{% static 'assets/svg/arrow.svg' %}" alt=""
+                                class="fn__svg"></span>
                     </a>
                     <ul class="sub-menu">
                         <li>
@@ -88,12 +95,14 @@
                         <li>
                             <a href="{% url 'contactPage' %}"><span class="text">Contact Us</span></a>
                         </li>
-                
+
                     </ul>
                 </li>
                 <li>
-                    <a href="{% url 'logoutPage' %}" class="fn__tooltip menu__item" data-position="right" title="Log Out">
-                        <span class="icon"><img src="{% static 'assets/svg/logout.svg' %}" alt="" class="fn__svg"></span>
+                    <a href="{% url 'logoutPage' %}" class="fn__tooltip menu__item" data-position="right"
+                        title="Log Out">
+                        <span class="icon"><img src="{% static 'assets/svg/logout.svg' %}" alt=""
+                                class="fn__svg"></span>
                         <span class="text">Log Out</span>
                     </a>
                 </li>

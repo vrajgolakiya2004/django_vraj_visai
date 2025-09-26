@@ -40,7 +40,7 @@ for file_name in pdf_files:
 
 # Check if any documents were processed
 if not documents:
-    print("❌ No documents were processed. Please check the PDF files and their locations.")
+    print("No documents were processed. Please check the PDF files and their locations.")
     exit(1)
 
 # Split text into smaller chunks
@@ -70,4 +70,4 @@ index.add(np.array(embeddings, dtype=np.float32))
 faiss_path = os.path.join(data_folder, "rag_data_index.faiss")
 faiss.write_index(index, faiss_path)
 
-print("✅ FAISS index created and saved successfully for the PDF files in rag_data!")
+print("FAISS index created and saved successfully for the PDF files in rag_data!")

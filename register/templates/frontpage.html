@@ -1,14 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="author" content="templatemo">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
 
-    <title>Liberty NFT Marketplace - HTML CSS Template</title>
+    <title>VisAi</title>
+    <link rel="shortcut icon" href="{% static 'assets/images/logo-retina-full.png' %}">
 
     <!-- Bootstrap core CSS -->
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -19,11 +22,12 @@
     <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css">
+
 </head>
 
 <body style="background: #1e1e1e;">
-    <!-- Preloader -->
-    {% comment %} <div id="js-preloader" class="js-preloader">
+    <!-- Preloader
+    <div id="js-preloader" class="js-preloader">
         <div class="preloader-inner">
             <span class="dot"></span>
             <div class="dots">
@@ -32,7 +36,7 @@
                 <span></span>
             </div>
         </div>
-    </div> {% endcomment %}
+    </div> -->
 
     <!-- Header -->
     <header class="header-area header-sticky">
@@ -41,16 +45,21 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <a href="home.html" class="logo">
-                           <img src="{% static 'assets/img/logo.png' %}" alt="" class="desktop_logo" style="width:30%;">
-   
+                            <img src="{% static 'assets/img/logo.png' %}" alt="" class="desktop_logo"
+                                style="width:30%;">
+
                         </a>
                         <ul class="nav">
                             <li><a href="{% url 'signInPage' %}">Home</a></li>
                             <li><a href="{% url 'signInPage' %}">Contact</a></li>
                             <li><a href="{% url 'signInPage' %}">Pricing</a></li>
                             <li><a href="{% url 'signInPage' %}">FAQ</a></li>
-                            <li><div class="main-button"><a href="{% url 'signInPage' %}" target="_blank" style="color: white;">Login</a></div></li>
-                        </ul>   
+                            <li>
+                                <a href="{% url 'signInPage' %}" target="_blank" class="login-btn">
+                                    Login
+                                </a>
+                            </li>
+                        </ul>
                         <a class="menu-trigger"><span>Menu</span></a>
                     </nav>
                 </div>
@@ -88,7 +97,11 @@
                                 <div class="section-heading">
                                     <div class="line-dec"></div>
                                     <h2>About Us</h2><br><br>
-                                    <h6>At VisAI, we believe that creativity should have no limits. Our Visual Generator Tool (Vision Gen) is designed to empower individuals, businesses, and content creators to bring their ideas to life effortlessly. By combining AI-driven text prompts with multiple reference images, our platform allows users to generate stunning visuals and videos with precision and ease.</h6>
+                                    <h6>At VisAI, we believe that creativity should have no limits. Our Visual Generator
+                                        Tool (Vision Gen) is designed to empower individuals, businesses, and content
+                                        creators to bring their ideas to life effortlessly. By combining AI-driven text
+                                        prompts with multiple reference images, our platform allows users to generate
+                                        stunning visuals and videos with precision and ease.</h6>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-sm-6">
@@ -102,19 +115,20 @@
                                     <h4>🎨 Custom Visuals</h4><br>
                                     <h6>Create unique visuals tailored to your needs and preferences.</h6>
                                 </div>
-                              </div>
-                              <div class="col-lg-2 col-sm-6">
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
                                 <div class="item">
-                                  <h4>⚡ Seamless Experience </h4><br>
-                                  <h6>Generate, refine, and download content in just a few clicks.</h6>
+                                    <h4>⚡ Seamless Experience </h4><br>
+                                    <h6>Generate, refine, and download content in just a few clicks.</h6>
                                 </div>
-                              </div>
-                              <div class="col-lg-2 col-sm-6">
-                                <div class="item"> 
-                                  <h4>📈 For Everyone</h4><br>
-                                  <h6> Whether you're a marketer, designer, or business owner, VisAI streamlines your creative workflow.</h6>
+                            </div>
+                            <div class="col-lg-2 col-sm-6">
+                                <div class="item">
+                                    <h4>📈 For Everyone</h4><br>
+                                    <h6> Whether you're a marketer, designer, or business owner, VisAI streamlines your
+                                        creative workflow.</h6>
                                 </div>
-                              </div>                
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,7 +139,8 @@
                                 <div class="section-heading">
                                     <div class="line-dec"></div>
                                     <h2>Explore Gallery</h2><br><br>
-                                    <h6>See how AI transforms ideas into reality. Explore, get inspired, and start creating your own masterpieces today!</h6>
+                                    <h6>See how AI transforms ideas into reality. Explore, get inspired, and start
+                                        creating your own masterpieces today!</h6>
                                 </div>
                             </div>
                             <div class="col-lg-12">
@@ -134,20 +149,20 @@
                                         <img src="{% static 'assets/images/1.jpg' %}" alt="">
                                     </div>
                                     <div class="item">
-                                      <img src="{% static 'assets/images/2.jpg' %}" alt="">
+                                        <img src="{% static 'assets/images/2.jpg' %}" alt="">
                                     </div>
-                  
+
                                     <div class="item">
-                                      <img src="{% static 'assets/images/3.jpg' %}" alt="">
-                                    </div>
-                                    <div class="item">
-                                      <img src="{% static 'assets/images/4.jpg' %}" alt="">
+                                        <img src="{% static 'assets/images/3.jpg' %}" alt="">
                                     </div>
                                     <div class="item">
-                                      <img src="{% static 'assets/images/5.jpg' %}" alt="">
+                                        <img src="{% static 'assets/images/4.jpg' %}" alt="">
                                     </div>
                                     <div class="item">
-                                      <img src="{% static 'assets/images/6.jpg' %}" alt="">
+                                        <img src="{% static 'assets/images/5.jpg' %}" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'assets/images/6.jpg' %}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -177,57 +192,48 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 footer-section">
                     <h4>VisAI</h4>
-                    <p>Empowering creators with AI-driven visual generation. Transform your ideas into stunning images and videos effortlessly.</p>
+                    <p>Empowering creators with AI-driven visual generation. Transform your ideas into stunning images
+                        and videos effortlessly.</p>
                 </div>
-                       <!-- Quick Links -->
-      <div class="col-lg-3 col-md-6 footer-section">
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Explore Gallery</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </div>
+                <!-- Quick Links -->
+                <div class="col-lg-3 col-md-6 footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Explore Gallery</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
 
-       <!-- Stay Connected -->
-       <div class="col-lg-3 col-md-6 footer-section">
-        <h4>Stay Connected</h4>
-        <ul class="social-links">
-          <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-          <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-        </ul>
-      </div>
-      
-      <!-- Newsletter -->
-      <div class="col-lg-3 col-md-6 footer-section">
-        <h4>Subscribe to Newsletter</h4>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-    </div>
-  </div>
-            </div>
-        </div>
-    </div>
+                <!-- Stay Connected -->
+                <div class="col-lg-3 col-md-6 footer-section">
+                    <h4>Stay Connected</h4>
+                    <ul class="social-links">
+                        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright © 2022 <a href="#">Liberty</a> NFT Marketplace Co., Ltd. All rights reserved.
-                    &nbsp;&nbsp;
-                    Designed by <a title="HTML CSS Templates" rel="sponsored" href="https://templatemo.com" target="_blank">TemplateMo</a></p>
+                <!-- Newsletter -->
+                <div class="col-lg-3 col-md-6 footer-section">
+                    <h4>Subscribe to Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+    </div>
+    </div>
+
+
 
     <!-- Scripts -->
     <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
@@ -240,4 +246,5 @@
     <!-- Add Swiper JS for gallery if needed -->
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 </body>
+
 </html>

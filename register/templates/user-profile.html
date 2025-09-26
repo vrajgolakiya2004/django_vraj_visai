@@ -2,7 +2,8 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
 
 <!-- Mirrored from frenify.com/work/envato/frenify/html/techwave/1/user-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Mar 2024 06:00:48 GMT -->
 {% load static %}
@@ -12,170 +13,157 @@
 {% block content %}
 {% include 'header.html' %}
 {% include 'sidebar.html' %}
-{% include 'footer.html' %}
-        
-                        
-        <!-- CONTENT -->
-        <div class="techwave_fn_content">
-        
-            <!-- PAGE (all pages go inside this div) -->
-            <div class="techwave_fn_page">
-                
-                <!-- User Profile Page -->
-                <div class="techwave_fn_user_profile_page">
-                    <!-- Page Title -->
-                    <div class="techwave_fn_pagetitle">
-                        <h2 class="title">User Profile</h2>
+
+
+
+<!-- CONTENT -->
+<div class="techwave_fn_content">
+
+    <!-- PAGE (all pages go inside this div) -->
+    <div class="techwave_fn_page">
+
+        <!-- User Profile Page -->
+        <div class="techwave_fn_user_profile_page">
+            <!-- Page Title -->
+            <div class="techwave_fn_pagetitle">
+                <h2 class="title">User Profile</h2>
+            </div>
+            <!-- !Page Title -->
+
+            <div class="container small">
+                <div class="techwave_fn_user_profile">
+
+                    <div class="user__profile">
+                        <div class="user_avatar">
+                            <img src="{{ request.session.user_image }}" alt="">
+                        </div>
+                        <div class="user_details">
+                            <ul>
+                                <li>
+                                    <div class="item">
+                                        <h4 class="subtitle">Name</h4>
+                                        <h3 class="title">{{ request.session.user_name }}</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <h4 class="subtitle">Username</h4>
+                                        <h3 class="title">{{ request.session.user_name }}</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <h4 class="subtitle">Email Address</h4>
+                                        <h3 class="title">{{ request.session.user_email }}</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item">
+                                        <h4 class="subtitle">Phone</h4>
+                                        <h3 class="title">{{ request.session.user_phone }}</h3>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="{% url 'userSettingsPage' %}" class="user_edit fn__icon_button">
+                            <img src="{% static 'assets/svg/setting.svg' %}" alt="" class="fn__svg">
+                        </a>
                     </div>
-                    <!-- !Page Title -->
-                
-                    <div class="container small">
-                        <div class="techwave_fn_user_profile">
 
-                            <div class="user__profile">
-                                <div class="user_avatar">
-                                    <img src="{{ request.session.user_image }}" alt="">
-                                </div>
-                                <div class="user_details">
-                                    <ul>
-                                        <li>
-                                            <div class="item">
-                                                <h4 class="subtitle">Name</h4>
-                                                <h3 class="title">{{ request.session.user_name }}</h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <h4 class="subtitle">Username</h4>
-                                                <h3 class="title">{{ request.session.user_name }}</h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <h4 class="subtitle">Email Address</h4>
-                                                <h3 class="title">{{ request.session.user_email }}</h3>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="item">
-                                                <h4 class="subtitle">Phone</h4>
-                                                <h3 class="title">{{ request.session.user_phone }}</h3>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <a href="{% url 'userSettingsPage' %}" class="user_edit fn__icon_button">
-                                    <img src="{% static 'assets/svg/setting.svg' %}" alt="" class="fn__svg">
-                                </a>
-                            </div>
-
-                            <div class="user__plan">
-                                <div class="plan_left">
-                                    <h4 class="subtitle">Your Plan</h4>
-                                    <p class="info"><span>Personal Plan</span> - You will given 8000 tokens every month</p>
-                                </div>
-                                <div class="plan_right">
-                                    <a href="{% url 'passwordChangePage' %}" class="token_upgrade techwave_fn_button" style="margin-left: 10px;"><span>Change Password</span></a>
-                                </div>
-                            </div>
-
-                            <div class="user__interests">
-                                <h4 class="title">What are your interests?</h4>
-                                <div class="fn__options_list">
-                                    <ul>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border enabled">
-                                                <span>Advertising</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Architecture</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Art</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Education</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Fashion</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Film TV</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Interior</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border enabled">
-                                                <span>Marketing</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Graphics</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Games</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Stock Images</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="techwave_fn_button small__border disabled">
-                                                <span>Other</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-
+                    <div class="user__plan">
+                        <div class="plan_left">
+                            <h4 class="subtitle">Your Plan</h4>
+                            <p class="info"><span>Personal Plan</span> - You will given 8000 tokens every month</p>
+                        </div>
+                        <div class="plan_right">
+                            <a href="{% url 'passwordChangePage' %}" class="token_upgrade techwave_fn_button"
+                                style="margin-left: 10px;"><span>Change Password</span></a>
                         </div>
                     </div>
-                    
+
+                    <div class="user__interests">
+                        <h4 class="title">What are your interests?</h4>
+                        <div class="fn__options_list">
+                            <ul>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border enabled">
+                                        <span>Advertising</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Architecture</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Art</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Education</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Fashion</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Film TV</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Interior</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border enabled">
+                                        <span>Marketing</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Graphics</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Games</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Stock Images</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="techwave_fn_button small__border disabled">
+                                        <span>Other</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                 </div>
-                <!-- !User Profile Page -->
-                
             </div>
-            <!-- !PAGE (all pages go inside this div) -->
-            
-            <!-- FOOTER (inside the content) -->
-            <footer class="techwave_fn_footer">
-                <div class="techwave_fn_footer_content">
-                    <div class="copyright">
-                        <p>2023© Frenify Team</p>
-                    </div>
-                    <div class="menu_items">
-                        <ul>
-                            <li><a href="terms.html">Terms of Service</a></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
-            <!-- !FOOTER (inside the content) -->
-            
+
         </div>
-        <!-- !CONTENT -->
-        
+        <!-- !User Profile Page -->
+
     </div>
+    <!-- !PAGE (all pages go inside this div) -->
+
+    {% include 'footer.html' %}
+
+</div>
+<!-- !CONTENT -->
+
+</div>
 </div>
 <!-- !MAIN WRAPPER -->
 
@@ -189,5 +177,6 @@
 </body>
 
 <!-- Mirrored from frenify.com/work/envato/frenify/html/techwave/1/user-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Mar 2024 06:00:48 GMT -->
+
 </html>
 {% endblock %}

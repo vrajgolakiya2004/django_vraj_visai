@@ -2,313 +2,323 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
 
 {% load static %}
-{% block title %}community-feed - TechWave{% endblock %}
 
 
 {% block content %}
 {% include 'header.html' %}
 {% include 'sidebar.html' %}
-{% include 'footer.html' %}
-		
-				
-		<!-- CONTENT -->
+
+
+<!-- CONTENT -->
 <div class="techwave_fn_content">
 
-    <!-- PAGE (all pages go inside this div) -->
-    <div class="techwave_fn_page">
+	<!-- PAGE (all pages go inside this div) -->
+	<div class="techwave_fn_page">
 
-        <!-- Community Feed Page -->
-        <div class="techwave_fn_community_page">
+		<!-- Community Feed Page -->
+		<div class="techwave_fn_community_page">
 
-            <div class="fn__title_holder">
-                <div class="container">
-                    <h1 class="title">Community Feed</h1>
-                </div>
-            </div>
+			<div class="fn__title_holder">
+				<div class="container">
+					<h1 class="title">Community Feed</h1>
+				</div>
+			</div>
 
-            <!-- Feed -->
-            <div class="techwave_fn_feed">
-                <div class="container">
+			<!-- Feed -->
+			<div class="techwave_fn_feed">
+				<div class="container">
 
-                    <!-- feed filter -->
-                    <div class="feed__filter">
-                        <div class="filter__left">
-                            <div class="filter__search">
-                                <input type="text" placeholder="Search gallery">
-                                <a href="#" class="techwave_fn_button"><span>Search</span></a>
-                            </div>
-                            <div class="filter__upscaled">
-                                <label class="fn__checkbox">
-                                    <input type="checkbox">Upscaled
-                                    <span class="checkmark"></span>
-                                    <img src="{% static 'assets/svg/check.svg' %}" alt="" class="fn__svg">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="filter__sorting">
-                            <a href="#" class="filter__trending enabled techwave_fn_button has__icon small__border">
-                                <img src="{% static 'assets/svg/thunder.svg' %}" alt="" class="fn__svg">
-                                <span>Trending</span>
-                            </a>
-                            <a href="#" class="filter__new disabled techwave_fn_button has__icon small__border">
-                                <img src="{% static 'assets/svg/new.svg' %}" alt="" class="fn__svg">
-                                <span>New</span>
-                            </a>
-                        </div>
-                    </div>
-                    <!-- !feed filter -->
-
-                    <!-- feed content -->
-                    <div class="feed__content">
-                        <div class="feed__results">
-                            <div class="fn__preloader">
-                                <div class="icon"></div>
-                                <div class="text">Loading</div>
-                            </div>
-                            <ul class="fn__gallery_items">
-
-                                <!-- #1 gallery item -->
-                                <li class="fn__gallery_item">
-                                    <div class="item" data-id="345">
-                                        <div class="img">
-                                            <img src="{% static 'assets/img/gallery/1.jpg' %}" alt="">
-                                        </div>
-
-                                        <div class="item__info">
-                                            <div class="info__header">
-                                                <div class="user__info">
-                                                    <img src="{% static 'assets/img/user/user.jpg' %}" alt="">
-                                                    <h3 class="author_name">LuckyLee</h3>
-                                                </div>
-                                                <a href="#" class="fn__like no_border" data-id="3">
-                                                    <span class="count">343</span>
-                                                    <img src="{% static 'assets/svg/like.svg' %}" alt="" class="fn__svg empty__like">
-                                                    <img src="{% static 'assets/svg/like-full.svg' %}" alt="" class="fn__svg full__like">
-                                                </a>
-                                            </div>
-                                            <p class="desc">Terra Fusion: A daring fusion of tectonic forms with neo-abstract swirls, reflecting the chaos and </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- !#1 gallery item -->
-
-                                <!-- #2 gallery item -->
-                                <li class="fn__gallery_item">
-                                    <div class="item" data-id="265">
-                                        <div class="img">
-                                            <img src="{% static 'assets/img/gallery/2.jpg' %}" alt="">
-                                        </div>
-
-                                        <div class="item__info">
-                                            <div class="info__header">
-                                                <div class="user__info">
-                                                    <img src="{% static 'assets/img/user/user.jpg' %}" alt="">
-                                                    <h3 class="author_name">LuckyLee</h3>
-                                                </div>
-                                                <a href="#" class="fn__like no_border" data-id="265">
-                                                    <span class="count">65</span>
-                                                    <img src="{% static 'assets/svg/like.svg' %}" alt="" class="fn__svg empty__like">
-                                                    <img src="{% static 'assets/svg/like-full.svg' %}" alt="" class="fn__svg full__like">
-                                                </a>
-                                            </div>
-                                            <p class="desc">Terra Fusion: A daring fusion of tectonic forms with neo-abstract swirls, reflecting the chaos and </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <!-- !#2 gallery item -->
-
-                                <!-- #3 gallery item -->
-                                <li class="fn__gallery_item">
-                                    <div class="item" data-id="456">
-                                        <div class="img">
-                                            <img src="{% static 'assets/img/gallery/3.jpg' %}" alt="">
-                                        </div>
-
-                                        <div class="item__info">
-                                            <div class="info__header">
-                                                <div class="user__info">
-                                                    <img src="{% static 'assets/img/user/user.jpg' %}" alt="">
-                                                    <h3 class="author_name">LuckyLee</h3>
-                                                </div>
-                                                <a href="#" class="fn__like no_border" data-id="456">
-                                                    <span class="count">95</span>
-                                                    <img src="{% static 'assets/svg/like.svg' %}" alt="" class="fn__svg empty__like">													<img src="svg/like.svg" alt="" class="fn__svg empty__like">
-																</a>
-													</div>
-													<p class="desc">Terra Fusion: A daring fusion of tectonic forms with neo-abstract swirls, reflecting the chaos and </p>
-												</div>
-											</div>
-										</li>
-										<!-- !#3 gallery item -->
-
-										<li class="fn__gallery_item">
-											<div class="item" data-id="4311">
-												<div class="img">
-													<img src="{% static 'assets/img/gallery/4.jpg' %}" alt="">
-												</div>
-		
-												<div class="item__info">
-													<div class="info__header">
-														<div class="user__info">
-															<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
-															<h3 class="author_name">LuckyLee</h3>
-														</div>
-														<a href="#" class="fn__like no_border" data-id="4311">
-															<span class="count">120</span>
-															<img src="{% static 'assets/svg/like.svg' %}" alt="" class="fn__svg empty__like">
-															<img src="{% static 'assets/svg/like-full.svg' %}" alt="" class="fn__svg full__like">
-														</a>
-													</div>
-													<p class="desc">Terra Fusion: A daring fusion of tectonic forms with neo-abstract swirls, reflecting the chaos and </p>
-												</div>
-											</div>
-										</li>
-										<!-- !#4 gallery item -->
-		
-										<!-- #5 gallery item -->
-										<li class="fn__gallery_item">
-											<div class="item" data-id="33">
-												<div class="img">
-													<img src="{% static 'assets/img/gallery/5.jpg' %}" alt="">
-												</div>
-		
-												<div class="item__info">
-													<div class="info__header">
-														<div class="user__info">
-															<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
-															<h3 class="author_name">LuckyLee</h3>
-														</div>
-														<a href="#" class="fn__like no_border" data-id="33">
-															<span class="count">322</span>
-															<img src="{% static 'assets/svg/like.svg' %}" alt="" class="fn__svg empty__like">
-															<img src="{% static 'assets/svg/like-full.svg' %}" alt="" class="fn__svg full__like">
-														</a>
-													</div>
-													<p class="desc">Terra Fusion: A daring fusion of tectonic forms with neo-abstract swirls, reflecting the chaos and </p>
-												</div>
-											</div>
-										</li>
-										<!-- !#5 gallery item -->
-		
-										<!-- #6 gallery item -->
-										<li class="fn__gallery_item">
-											<div class="item" data-id="709">
-												<div class="img">
-													<img src="{% static 'assets/img/gallery/6.jpg' %}" alt="">
-												</div>
-		
-												<div class="item__info">
-													<div class="info__header">
-														<div class="user__info">
-															<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
-															<h3 class="author_name">LuckyLee</h3>
-														</div>
-														<a href="#" class="fn__like no_border" data-id="709">
-															<span class="count">234</span>
-															<img src="{% static 'assets/svg/like.svg' %}" alt="" class="fn__svg empty__like">
-															<img src="{% static 'assets/svg/like-full.svg' %}" alt="" class="fn__svg full__like">
-														</a>
-													</div>
-													<p class="desc">Terra Fusion: A daring fusion of tectonic forms with neo-abstract swirls, reflecting the chaos and </p>
-												</div>
-											</div>
-										</li>
-										<!-- !#6 gallery item -->
-		
-										<!-- #7 gallery item -->
-										<li class="fn__gallery_item">
-											<div class="item" data-id="20">
-												<div class="img">
-													<img src="{% static 'assets/img/gallery/7.jpg' %}" alt="">
-												</div>
-		
-												<div class="item__info">
-													<div class="info__header">
-														<div class="user__info">
-															<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
-															<h3 class="author_name">LuckyLee</h3>
-														</div>
-														<a href="#" class="fn__like no_border" data-id="20">
-															<span class="count">700</span>
-															<img src="{% static 'assets/svg/like.svg' %}" alt="" class="fn__svg empty__like">
-															<img src="{% static 'assets/svg/like-full.svg' %}" alt="" class="fn__svg full__like">
-														</a>
-													</div>
-													<p class="desc">Terra Fusion: A daring fusion of tectonic forms with neo-abstract swirls, reflecting the chaos and </p>
-												</div>
-											</div>
-										</li>
-										<!-- !#7 gallery item -->
-		
-										<!-- #8 gallery item -->
-										<li class="fn__gallery_item">
-											<div class="item" data-id="45">
-												<div class="img">
-													<img src="{% static 'assets/img/gallery/8.jpg' %}" alt="">
-												</div>
-		
-												<div class="item__info">
-													<div class="info__header">
-														<div class="user__info">
-															<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
-															<h3 class="author_name">LuckyLee</h3>
-														</div>
-														<a href="#" class="fn__like no_border" data-id="45">
-															<span class="count">90</span>
-															<img src="{% static 'assets/svg/like.svg' %}" alt="" class="fn__svg empty__like">
-															<img src="{% static 'assets/svg/like-full.svg' %}" alt="" class="fn__svg full__like">
-														</a>
-													</div>
-													<p class="desc">Terra Fusion: A daring fusion of tectonic forms with neo-abstract swirls, reflecting the chaos and </p>
-												</div>
-											</div>
-										</li>
-										<!-- !#8 gallery item -->
-		
-									</ul>
-								</div>
-								<div class="feed__more">
-									<a href="#" class="medium techwave_fn_button"><span>Load More</span></a>
-								</div>
+					<!-- feed filter -->
+					<div class="feed__filter">
+						<div class="filter__left">
+							<div class="filter__search">
+								<input type="text" placeholder="Search gallery">
+								<a href="#" class="techwave_fn_button"><span>Search</span></a>
 							</div>
-							<!-- !feed content -->
-		
+							<div class="filter__upscaled">
+								<label class="fn__checkbox">
+									<input type="checkbox">Upscaled
+									<span class="checkmark"></span>
+									<img src="{% static 'assets/svg/check.svg' %}" alt="" class="fn__svg">
+								</label>
+							</div>
+						</div>
+						<div class="filter__sorting">
+							<a href="#" class="filter__trending enabled techwave_fn_button has__icon small__border">
+								<img src="{% static 'assets/svg/thunder.svg' %}" alt="" class="fn__svg">
+								<span>Trending</span>
+							</a>
+							<a href="#" class="filter__new disabled techwave_fn_button has__icon small__border">
+								<img src="{% static 'assets/svg/new.svg' %}" alt="" class="fn__svg">
+								<span>New</span>
+							</a>
 						</div>
 					</div>
-					<!-- !Feed -->
-		
+					<!-- !feed filter -->
+
+					<!-- feed content -->
+					<div class="feed__content">
+						<div class="feed__results">
+							<div class="fn__preloader">
+								<div class="icon"></div>
+								<div class="text">Loading</div>
+							</div>
+							<ul class="fn__gallery_items">
+
+								<!-- #1 gallery item -->
+								<li class="fn__gallery_item">
+									<div class="item" data-id="345">
+										<div class="img">
+											<img src="{% static 'assets/img/gallery/1.jpg' %}" alt="">
+										</div>
+
+										<div class="item__info">
+											<div class="info__header">
+												<div class="user__info">
+													<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
+													<h3 class="author_name">LuckyLee</h3>
+												</div>
+												<a href="#" class="fn__like no_border" data-id="3">
+													<span class="count">343</span>
+													<img src="{% static 'assets/svg/like.svg' %}" alt=""
+														class="fn__svg empty__like">
+													<img src="{% static 'assets/svg/like-full.svg' %}" alt=""
+														class="fn__svg full__like">
+												</a>
+											</div>
+											<p class="desc">Terra Fusion: A daring fusion of tectonic forms with
+												neo-abstract swirls, reflecting the chaos and </p>
+										</div>
+									</div>
+								</li>
+								<!-- !#1 gallery item -->
+
+								<!-- #2 gallery item -->
+								<li class="fn__gallery_item">
+									<div class="item" data-id="265">
+										<div class="img">
+											<img src="{% static 'assets/img/gallery/2.jpg' %}" alt="">
+										</div>
+
+										<div class="item__info">
+											<div class="info__header">
+												<div class="user__info">
+													<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
+													<h3 class="author_name">LuckyLee</h3>
+												</div>
+												<a href="#" class="fn__like no_border" data-id="265">
+													<span class="count">65</span>
+													<img src="{% static 'assets/svg/like.svg' %}" alt=""
+														class="fn__svg empty__like">
+													<img src="{% static 'assets/svg/like-full.svg' %}" alt=""
+														class="fn__svg full__like">
+												</a>
+											</div>
+											<p class="desc">Terra Fusion: A daring fusion of tectonic forms with
+												neo-abstract swirls, reflecting the chaos and </p>
+										</div>
+									</div>
+								</li>
+								<!-- !#2 gallery item -->
+
+								<!-- #3 gallery item -->
+								<li class="fn__gallery_item">
+									<div class="item" data-id="456">
+										<div class="img">
+											<img src="{% static 'assets/img/gallery/3.jpg' %}" alt="">
+										</div>
+
+										<div class="item__info">
+											<div class="info__header">
+												<div class="user__info">
+													<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
+													<h3 class="author_name">LuckyLee</h3>
+												</div>
+												<a href="#" class="fn__like no_border" data-id="456">
+													<span class="count">95</span>
+													<img src="{% static 'assets/svg/like.svg' %}" alt=""
+														class="fn__svg empty__like"> <img src="svg/like.svg" alt=""
+														class="fn__svg empty__like">
+												</a>
+											</div>
+											<p class="desc">Terra Fusion: A daring fusion of tectonic forms with
+												neo-abstract swirls, reflecting the chaos and </p>
+										</div>
+									</div>
+								</li>
+								<!-- !#3 gallery item -->
+
+								<li class="fn__gallery_item">
+									<div class="item" data-id="4311">
+										<div class="img">
+											<img src="{% static 'assets/img/gallery/4.jpg' %}" alt="">
+										</div>
+
+										<div class="item__info">
+											<div class="info__header">
+												<div class="user__info">
+													<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
+													<h3 class="author_name">LuckyLee</h3>
+												</div>
+												<a href="#" class="fn__like no_border" data-id="4311">
+													<span class="count">120</span>
+													<img src="{% static 'assets/svg/like.svg' %}" alt=""
+														class="fn__svg empty__like">
+													<img src="{% static 'assets/svg/like-full.svg' %}" alt=""
+														class="fn__svg full__like">
+												</a>
+											</div>
+											<p class="desc">Terra Fusion: A daring fusion of tectonic forms with
+												neo-abstract swirls, reflecting the chaos and </p>
+										</div>
+									</div>
+								</li>
+								<!-- !#4 gallery item -->
+
+								<!-- #5 gallery item -->
+								<li class="fn__gallery_item">
+									<div class="item" data-id="33">
+										<div class="img">
+											<img src="{% static 'assets/img/gallery/5.jpg' %}" alt="">
+										</div>
+
+										<div class="item__info">
+											<div class="info__header">
+												<div class="user__info">
+													<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
+													<h3 class="author_name">LuckyLee</h3>
+												</div>
+												<a href="#" class="fn__like no_border" data-id="33">
+													<span class="count">322</span>
+													<img src="{% static 'assets/svg/like.svg' %}" alt=""
+														class="fn__svg empty__like">
+													<img src="{% static 'assets/svg/like-full.svg' %}" alt=""
+														class="fn__svg full__like">
+												</a>
+											</div>
+											<p class="desc">Terra Fusion: A daring fusion of tectonic forms with
+												neo-abstract swirls, reflecting the chaos and </p>
+										</div>
+									</div>
+								</li>
+								<!-- !#5 gallery item -->
+
+								<!-- #6 gallery item -->
+								<li class="fn__gallery_item">
+									<div class="item" data-id="709">
+										<div class="img">
+											<img src="{% static 'assets/img/gallery/6.jpg' %}" alt="">
+										</div>
+
+										<div class="item__info">
+											<div class="info__header">
+												<div class="user__info">
+													<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
+													<h3 class="author_name">LuckyLee</h3>
+												</div>
+												<a href="#" class="fn__like no_border" data-id="709">
+													<span class="count">234</span>
+													<img src="{% static 'assets/svg/like.svg' %}" alt=""
+														class="fn__svg empty__like">
+													<img src="{% static 'assets/svg/like-full.svg' %}" alt=""
+														class="fn__svg full__like">
+												</a>
+											</div>
+											<p class="desc">Terra Fusion: A daring fusion of tectonic forms with
+												neo-abstract swirls, reflecting the chaos and </p>
+										</div>
+									</div>
+								</li>
+								<!-- !#6 gallery item -->
+
+								<!-- #7 gallery item -->
+								<li class="fn__gallery_item">
+									<div class="item" data-id="20">
+										<div class="img">
+											<img src="{% static 'assets/img/gallery/7.jpg' %}" alt="">
+										</div>
+
+										<div class="item__info">
+											<div class="info__header">
+												<div class="user__info">
+													<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
+													<h3 class="author_name">LuckyLee</h3>
+												</div>
+												<a href="#" class="fn__like no_border" data-id="20">
+													<span class="count">700</span>
+													<img src="{% static 'assets/svg/like.svg' %}" alt=""
+														class="fn__svg empty__like">
+													<img src="{% static 'assets/svg/like-full.svg' %}" alt=""
+														class="fn__svg full__like">
+												</a>
+											</div>
+											<p class="desc">Terra Fusion: A daring fusion of tectonic forms with
+												neo-abstract swirls, reflecting the chaos and </p>
+										</div>
+									</div>
+								</li>
+								<!-- !#7 gallery item -->
+
+								<!-- #8 gallery item -->
+								<li class="fn__gallery_item">
+									<div class="item" data-id="45">
+										<div class="img">
+											<img src="{% static 'assets/img/gallery/8.jpg' %}" alt="">
+										</div>
+
+										<div class="item__info">
+											<div class="info__header">
+												<div class="user__info">
+													<img src="{% static 'assets/img/user/user.jpg' %}" alt="">
+													<h3 class="author_name">LuckyLee</h3>
+												</div>
+												<a href="#" class="fn__like no_border" data-id="45">
+													<span class="count">90</span>
+													<img src="{% static 'assets/svg/like.svg' %}" alt=""
+														class="fn__svg empty__like">
+													<img src="{% static 'assets/svg/like-full.svg' %}" alt=""
+														class="fn__svg full__like">
+												</a>
+											</div>
+											<p class="desc">Terra Fusion: A daring fusion of tectonic forms with
+												neo-abstract swirls, reflecting the chaos and </p>
+										</div>
+									</div>
+								</li>
+								<!-- !#8 gallery item -->
+
+							</ul>
+						</div>
+						<div class="feed__more">
+							<a href="#" class="medium techwave_fn_button"><span>Load More</span></a>
+						</div>
+					</div>
+					<!-- !feed content -->
+
 				</div>
-				<!-- !Community Feed Page -->
-		
-			
 			</div>
-			<!-- !PAGE (all pages go inside this div) -->
-			
+			<!-- !Feed -->
+
 		</div>
-			<!-- FOOTER (inside the content) -->
-			<footer class="techwave_fn_footer">
-				<div class="techwave_fn_footer_content">
-					<div class="copyright">
-						<p>2023© Frenify Team</p>
-					</div>
-					<div class="menu_items">
-						<ul>
-							<li><a href="terms.html">Terms of Service</a></li>
-							<li><a href="privacy.html">Privacy Policy</a></li>
-						</ul>
-					</div>
-				</div>
-			</footer>
-			<!-- !FOOTER (inside the content) -->
-			
-		</div>
-		<!-- !CONTENT -->
-		
-		
+		<!-- !Community Feed Page -->
+
+
 	</div>
+	<!-- !PAGE (all pages go inside this div) -->
+
+</div>
+
+
+</div>
+<!-- !CONTENT -->
+
+{% include 'footer.html' %}
+
+</div>
 </div>
 <!-- !MAIN WRAPPER -->
 
@@ -324,5 +334,6 @@
 </body>
 
 <!-- Mirrored from frenify.com/work/envato/frenify/html/techwave/1/community-feed.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Mar 2024 06:00:52 GMT -->
+
 </html>
 {% endblock %}

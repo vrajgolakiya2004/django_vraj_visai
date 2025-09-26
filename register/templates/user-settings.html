@@ -2,7 +2,8 @@
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en"> <!--<![endif]-->
 
 <!-- Mirrored from frenify.com/work/envato/frenify/html/techwave/1/user-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Mar 2024 06:00:48 GMT -->
 {% load static %}
@@ -12,144 +13,131 @@
 {% block content %}
 {% include 'header.html' %}
 {% include 'sidebar.html' %}
-{% include 'footer.html' %}
-        
-                        
-        <!-- CONTENT -->
-        <div class="techwave_fn_content">
-        
-            <!-- PAGE (all pages go inside this div) -->
-            <div class="techwave_fn_page">
-                
-                <!-- User Settings Page -->
-                <div class="techwave_fn_user_settings_page">
-                    <!-- Page Title -->
-                    <div class="techwave_fn_pagetitle">
-                        <h2 class="title">Settings</h2>
-                    </div>
-                    <!-- !Page Title -->
-                
-                    <div class="container small">
-                        <div class="techwave_fn_user_settings">
-                            <!-- Add message handling -->
-                            {% if messages %}
-                                {% for message in messages %}
-                                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
-                                {% endfor %}
-                            {% endif %}
 
-                            <!-- Profile Update Form -->
-                            <form method="POST" enctype="multipart/form-data" action="{% url 'userSettingsPage' %}">
-                                {% csrf_token %}
-                                <div class="user__settings">
-                                    <div class="settings_left">
-                                        <!-- Image upload section -->
-                                        <label class="fn__upload">
-                                            <span class="upload_content">
-                                                <img src="{% static 'svg/upload.svg' %}" alt="" class="fn__svg">
-                                                <span class="title">Drag & Drop a Image</span>
-                                                <span class="fn__lined_text">
-                                                    <span class="line"></span>
-                                                    <span class="text">Or</span>
-                                                    <span class="line"></span>
-                                                </span>
-                                                <span class="title">Browse</span>
-                                                <span class="desc">Supports JPG, JPEG, and PNG</span>
-                                            </span>
-                                            <span class="upload_preview">
-                                                <a href="#" class="fn__closer fn__icon_button">
-                                                    <img src="{% static 'svg/close.svg' %}" alt="" class="fn__svg">
-                                                </a>
-                                                {{ form.image }}
-                                                {% if request.session.user_image %}
-                                                    <img src="{{ user_image }}" alt="Profile Image" class="preview_img">
-                                                {% else %}
-                                                    <img src="{% static 'assets/img/user/default.jpg' %}" alt="Default Profile" class="preview_img">
-                                                {% endif %}
-                                            </span>
-                                        </label>
-                                        
-                                        {% if form.image.errors %}
-                                            <div class="error">
-                                                {% for error in form.image.errors %}
-                                                    <p>{{ error }}</p>
-                                                {% endfor %}
-                                            </div>
+
+
+<!-- CONTENT -->
+<div class="techwave_fn_content">
+
+    <!-- PAGE (all pages go inside this div) -->
+    <div class="techwave_fn_page">
+
+        <!-- User Settings Page -->
+        <div class="techwave_fn_user_settings_page">
+            <!-- Page Title -->
+            <div class="techwave_fn_pagetitle">
+                <h2 class="title">Settings</h2>
+            </div>
+            <!-- !Page Title -->
+
+            <div class="container small">
+                <div class="techwave_fn_user_settings">
+                    <!-- Add message handling -->
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+
+                    <!-- Profile Update Form -->
+                    <form method="POST" enctype="multipart/form-data" action="{% url 'userSettingsPage' %}">
+                        {% csrf_token %}
+                        <div class="user__settings">
+                            <div class="settings_left">
+                                <!-- Image upload section -->
+                                <label class="fn__upload">
+                                    <span class="upload_content">
+                                        <img src="{% static 'svg/upload.svg' %}" alt="" class="fn__svg">
+                                        <span class="title">Drag & Drop a Image</span>
+                                        <span class="fn__lined_text">
+                                            <span class="line"></span>
+                                            <span class="text">Or</span>
+                                            <span class="line"></span>
+                                        </span>
+                                        <span class="title">Browse</span>
+                                        <span class="desc">Supports JPG, JPEG, and PNG</span>
+                                    </span>
+                                    <span class="upload_preview">
+                                        <a href="#" class="fn__closer fn__icon_button">
+                                            <img src="{% static 'svg/close.svg' %}" alt="" class="fn__svg">
+                                        </a>
+                                        {{ form.image }}
+                                        {% if request.session.user_image %}
+                                        <img src="{{ user_image }}" alt="Profile Image" class="preview_img">
+                                        {% else %}
+                                        <img src="{% static 'assets/img/user/default.jpg' %}" alt="Default Profile"
+                                            class="preview_img">
                                         {% endif %}
-                                    </div>
+                                    </span>
+                                </label>
 
-                                    <!-- Form fields -->
-                                    <div class="settings_right">
-                                        <!-- Display name and email as read-only -->
-                                        <div class="item">
-                                            <label class="input_label">Name</label>
-                                            <div class="input_item">
-                                                <p>{{ user_name }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <label class="input_label">Email Address</label>
-                                            <div class="input_item">
-                                                <p>{{ user_email }}</p>
-                                            </div>
-                                        </div>
-                                        <div class="item">
-                                            <label class="input_label" for="{{ form.phone.id_for_label }}">Phone</label>
-                                            <div class="input_item">
-                                                {{ form.phone }}
-                                            </div>
-                                            {% if form.phone.errors %}
-                                                <div class="error">
-                                                    {% for error in form.phone.errors %}
-                                                        <p>{{ error }}</p>
-                                                    {% endfor %}
-                                                </div>
-                                            {% endif %}
-                                        </div>
+                                {% if form.image.errors %}
+                                <div class="error">
+                                    {% for error in form.image.errors %}
+                                    <p>{{ error }}</p>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
+                            </div>
 
-                                        <div class="item">
-                                            <label class="fn__submit">
-                                                <input type="submit" value="Save Changes">
-                                            </label>
-                                        </div>
+                            <!-- Form fields -->
+                            <div class="settings_right">
+                                <!-- Display name and email as read-only -->
+                                <div class="item">
+                                    <label class="input_label">Name</label>
+                                    <div class="input_item">
+                                        <p>{{ user_name }}</p>
                                     </div>
                                 </div>
-                            </form>
+                                <div class="item">
+                                    <label class="input_label">Email Address</label>
+                                    <div class="input_item">
+                                        <p>{{ user_email }}</p>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <label class="input_label" for="{{ form.phone.id_for_label }}">Phone</label>
+                                    <div class="input_item">
+                                        {{ form.phone }}
+                                    </div>
+                                    {% if form.phone.errors %}
+                                    <div class="error">
+                                        {% for error in form.phone.errors %}
+                                        <p>{{ error }}</p>
+                                        {% endfor %}
+                                    </div>
+                                    {% endif %}
+                                </div>
 
-                            <!-- Links -->
-                            <div class="mt-3">
-                                <a href="{% url 'userProfilePage' %}" class="btn btn-secondary">Back to Profile</a>
-                                <a href="{% url 'passwordChangePage' %}" class="btn btn-secondary" style="margin-left: 10px;">Change Password</a>
+                                <div class="item">
+                                    <label class="fn__submit">
+                                        <input type="submit" value="Save Changes">
+                                    </label>
+                                </div>
                             </div>
                         </div>
+                    </form>
+
+                    <!-- Links -->
+                    <div class="mt-3">
+                        <a href="{% url 'userProfilePage' %}" class="btn btn-secondary">Back to Profile</a>
+                        <a href="{% url 'passwordChangePage' %}" class="btn btn-secondary"
+                            style="margin-left: 10px;">Change Password</a>
                     </div>
-                    
                 </div>
-                <!-- !User Settings Page -->
-                
             </div>
-            <!-- !PAGE (all pages go inside this div) -->
-            
-            <!-- FOOTER (inside the content) -->
-            <footer class="techwave_fn_footer">
-                <div class="techwave_fn_footer_content">
-                    <div class="copyright">
-                        <p>2023© Frenify Team</p>
-                    </div>
-                    <div class="menu_items">
-                        <ul>
-                            <li><a href="terms.html">Terms of Service</a></li>
-                            <li><a href="privacy.html">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
-            <!-- !FOOTER (inside the content) -->
-            
+
         </div>
-        <!-- !CONTENT -->
-        
+        <!-- !User Settings Page -->
+
     </div>
+    <!-- !PAGE (all pages go inside this div) -->
+    {% include 'footer.html' %}
+
+</div>
+<!-- !CONTENT -->
+
+</div>
 </div>
 <!-- !MAIN WRAPPER -->
 
@@ -163,5 +151,6 @@
 </body>
 
 <!-- Mirrored from frenify.com/work/envato/frenify/html/techwave/1/user-settings.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 07 Mar 2024 06:00:49 GMT -->
+
 </html>
 {% endblock %}
