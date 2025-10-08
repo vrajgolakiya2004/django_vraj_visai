@@ -10,7 +10,7 @@ client = groq.Client(api_key=GROQ_API_KEY)
 def generate_response(user_query, user_data=None):
     """Generate a short and accurate LLM response based on retrieved PDF data and optional user data."""
     retrieved_context = retriever.retrieve_similar(user_query, top_k=3)
-    print("🔍 Retrieved Context for Query:", user_query)
+    print("Retrieved Context for Query:", user_query)
     print("Context:", retrieved_context)
    
     if not retrieved_context.strip():
