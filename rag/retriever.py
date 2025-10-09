@@ -32,7 +32,7 @@ def retrieve_similar(query, top_k=3):
     return "\n\n".join(results)
 
 if __name__ == "__main__":
-    print("✅ FAISS retriever is ready!")
+    print("FAISS retriever is ready!")
     query = "What is internet marketing success?"
     print(f"Query: {query}")
     print(retrieve_similar(query, top_k=3))
